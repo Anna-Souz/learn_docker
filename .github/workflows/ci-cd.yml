@@ -10,17 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Log in to Docker Hub
-      uses: docker/login-action@v2
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build Docker image
-      run: docker build -t my-dockerhub-username/my-microservice:latest .
+      - name: Build Docker image
+        run: docker build -t annasouz29/learn_docker:latest .
 
-    - name: Push Docker image
-      run: docker push my-dockerhub-username/my-microservice:latest
+      - name: Push Docker image
+        run: docker push annasouz29/learn_docker:latest
